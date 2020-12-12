@@ -1,5 +1,5 @@
 # LearningAIWithJava
-Learning how to make an simple AI from scratch.
+Learning how to make an simple AI from scratch. Will also create a Docker Container for learning purpose.
 
 ## Materials
  - http://iamtrask.github.io/2015/07/12/basic-python-network/
@@ -8,3 +8,4 @@ Learning how to make an simple AI from scratch.
 ## ToDo
  - [ ] Clean up code
  - [ ] refactor
+ - [ ] create a Docker Container
