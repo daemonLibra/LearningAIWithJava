@@ -12,11 +12,12 @@ public class Main {
         double [] output = {0,1,1,0};
 
         //The data which we want predicted after the training
-        double [] testInput = {0,0,1};
+        double [] testInput = {1,0,0};
 
         //give the Neural Network input data and the output plus we set the training iterations
         nn.train(input,output,10000);
 
+        System.out.println("------------------------");
         System.out.println("The estimated output is:");
         System.out.println(nn.thinking(testInput));
     }

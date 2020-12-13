@@ -94,8 +94,20 @@ public class NeuralNetwork {
             for (int j = 0; j < weights.length; j++) {
                 weights[j] += adjustment[j];
             }
+
+            printLoss(error, i);
         }
         System.out.println("Training done!");
+    }
+
+    private void printLoss(double [] error, int iteration){
+        double loss = 0;
+
+        for (int a = 0; a < error.length; a++){
+            loss += error[a];
+        }
+
+        System.out.println("Loss: " + loss + " Iteration: " + iteration);
     }
 
     private double[] think(double inputs[][]){
