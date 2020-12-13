@@ -1,4 +1,4 @@
-# LearningAIWithJava
+# Learning AI with Java
 Learning how to make an simple AI from scratch. Will also create a Docker Container for learning purpose.
 
 ## Materials
