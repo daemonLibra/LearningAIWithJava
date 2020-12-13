@@ -7,6 +7,15 @@ Learning how to make an simple AI from scratch. Will also create a Docker Contai
  - https://www.youtube.com/watch?v=gAkwW2tuIqE for Docker
  - https://www.jetbrains.com/help/idea/running-a-java-app-in-a-container.html
 
+| Input  | Output |
+| ------------- | ------------- |
+| 0 , 0 , 1  | 0  |
+| 1 , 1 , 1  | 1  |
+| 1 , 0 , 1  | 1  |
+| 0 , 1 , 1  | 0  |
+
+The left side is the training data and on the right is the output to the input data.
+
 ## Docker Container
 You can download the docker container with the following command (make sure to install docker):
 
@@ -20,7 +29,3 @@ and run the container with:
 docker run daemonlibra/learningaiwithjava
 ```
  
-## To Do
- - [ ] clean up code
- - [ ] refactor
- - [x] create a Docker Container
