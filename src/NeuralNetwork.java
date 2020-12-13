@@ -18,16 +18,19 @@ public class NeuralNetwork {
         return x * (1 - x);
     }
 
+    //calculates the matrix product, in this case we have a 4x3 matrix * a 3x1 matrix/vector
     private double[] dotProduct(double[][] a, double[] b){
         double[][] products = new double[4][3];
         double[] result = new double[4];
 
+        //first we do the multiplication
         for(int i = 0; i < a.length; i++){
             for(int j = 0; j < a[i].length; j++){
                 products[i][j] = a[i][j] * b[j];
             }
         }
 
+        //then we calculate the product
         for(int x = 0; x <products.length; x++){
             double sum = 0;
             for (int y = 0; y <products[x].length; y++){
@@ -38,6 +41,7 @@ public class NeuralNetwork {
         return result;
     }
 
+    //like the other matrix product but this time the 4x3 matrix is an 3x4 matrix
     private double[] dotOtherProduct(double[][] a, double[] b){
         double[][] products = new double[4][3];
         double[] result = new double[3];
@@ -58,6 +62,7 @@ public class NeuralNetwork {
         return result;
     }
 
+    //this function calculates the error rate from the given output and the estimated output
     private double[] calcError(double[] outputReal, double[] outputsEst){
         double[] result = new double[4];
         for (int i = 0; i < outputReal.length; i++){
@@ -66,6 +71,8 @@ public class NeuralNetwork {
         return result;
     }
 
+    //here the error rates are being multiplied by the estiamted output,
+    // if the error rate was low then the est. output was close to being right
     private double[] adjustmentInputs(double[] error, double[] output){
         double[] result = new double[4];
         for (int i = 0; i < error.length; i++){
@@ -80,16 +87,14 @@ public class NeuralNetwork {
             double[] output = think(inputs);
 
             double[] error = calcError(outputs,output);
-            //System.out.println(error);
 
             double[] adjustment = dotOtherProduct(inputs, adjustmentInputs(error, output));
 
+            //the training weights are being adjusted
             for (int j = 0; j < weights.length; j++) {
                 weights[j] += adjustment[j];
-                //System.out.println(weights[j]);
             }
         }
-
         System.out.println("Training done!");
     }
 
@@ -120,6 +125,7 @@ public class NeuralNetwork {
         return sigmoidNormalisation(sum);
     }
 
+    //creating random weights at the begining, 3x1 matrix
     private void generateWeights(){
         System.out.println("Generating Weights...");
         for (int i = 0; i < 3; i++){
