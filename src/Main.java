@@ -1,24 +1,21 @@
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Main {
 
     public static void main(String[] args) {
-        NeuralNetwork nn = new NeuralNetwork();
-
         //Input data for the Neural Network
-        double [][] input = {{0,0,1}, {1,1,1}, {1,0,1}, {0,1,1}};
+        double[][] input = {{0, 0, 1}, {1, 1, 1}, {1, 0, 1}, {0, 1, 1}};
 
         //The expected output for the input data
-        double [] output = {0,1,1,0};
+        double[] output = {0, 1, 1, 0};
 
         //The data which we want predicted after the training
-        double [] testInput = {0,0,0};
+        double[] testInput = {1, 0, 0};
 
         //give the Neural Network input data and the output plus we set the training iterations
-        nn.train(input,output,10000);
+        NeuralNetwork nn = new NeuralNetwork(input, output);
+        nn.train(10000);
 
         System.out.println("------------------------");
         System.out.println("The estimated output is:");
-        System.out.println(nn.think(testInput));
+        System.out.println(nn.prediction(testInput));
     }
 }
