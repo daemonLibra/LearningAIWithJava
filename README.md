@@ -7,6 +7,7 @@ Learning how to make an simple AI from scratch. Will also create a Docker Contai
  - https://machinelearningmastery.com/how-to-control-the-speed-and-stability-of-training-neural-networks-with-gradient-descent-batch-size/
  - https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/
  - https://mlfromscratch.com/neural-networks-explained/#/
+ - https://ml-cheatsheet.readthedocs.io/en/latest/backpropagation.html (very detailed, rly good)
  - https://www.youtube.com/watch?v=gAkwW2tuIqE for Docker
  - https://www.jetbrains.com/help/idea/running-a-java-app-in-a-container.html
 
