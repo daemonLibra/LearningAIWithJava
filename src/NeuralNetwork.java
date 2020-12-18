@@ -17,10 +17,24 @@ public class NeuralNetwork {
         this.bias = 1;
     }
 
+    private double sigmoid(double x) {
+        return (1 / (1 + Math.exp(-x)));
+    }
+
+    private double sigmoidDerivation(double x) {
+        return x * (1 - x);
+    }
+
     private double reluActivation(double x) {
         if (x < 0) {
-            return 0;
-        } else return x * 0.01; //Leaky ReLU
+            return x * 0.01;
+        } else return x;
+    }
+
+    private double reluDerivative(double x) {
+        if (x > 0) {
+            return 1.0;
+        } else return 0.01;
     }
 
     //calculates the matrix product
@@ -59,7 +73,7 @@ public class NeuralNetwork {
     //here the error rates are being multiplied by the estiamted output,
     // if the error rate was low then the est. output was close to being right
     private double calcGradiant(double error, double output) {
-        return error * output;
+        return error * sigmoidDerivation(output);
     }
 
     private void adjustWeights(double[] gradProduct) {
@@ -107,7 +121,7 @@ public class NeuralNetwork {
 
         double result = dotProduct(inputs, weights);
 
-        return reluActivation(result + bias);
+        return sigmoid(result + bias);
     }
 
     //creating random weights

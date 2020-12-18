@@ -8,7 +8,7 @@ public class Main {
         double[] output = {0, 1, 1, 0};
 
         //The data which we want predicted after the training
-        double[] testInput = {1, 0, 0};
+        double[] testInput = {0, 0, 1};
 
         //give the Neural Network input data and the output plus we set the training iterations
         NeuralNetwork nn = new NeuralNetwork(input, output);
